@@ -4,7 +4,8 @@
     padding: 0;
 }
 
-body {
+body{
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .banner {
@@ -29,12 +30,13 @@ h1 {
     display: grid;
     grid-template-columns: 5fr 5fr;
     grid-template-rows: 5fr 10fr;
-    grid-template-areas: 'hangmanWord hangmanWord' 'hangman keyboard';
+    grid-template-areas: 'word word' 'hangman keyboard';
 }
 
-.hangman-word {
-    grid-area: hangmanWord;
+.word {
+    grid-area: word;
     text-align: center;
+    font-size: 48px;
     min-height: 60px;
 }
 
