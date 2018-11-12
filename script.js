@@ -7,10 +7,8 @@ const words = ["jogging", "joking", "jukebox", "frazzled", "juicy", "pneumonia",
     "zilch", "peekaboo", "jelly", "avenue", "axiom", "unknown unknown", "whiskey whiskey",
     "unworthy", "thumbscrew", "twelfth"];
 
-const letters = ["A", "Ą", "B", "C", "Ć", "D", "E",
-"Ę", "F", "G", "H", "I", "J", "K", "L", "Ł", "M", "N",
-"Ń", "O", "Ó", "P", "Q", "R", "S", "Ś", "T", "U",
-"V", "W", "X", "Y", "Z", "Ź", "Ż"];
+const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
+"V", "W", "X", "Y", "Z"];
 
 function getRandomWord() {
     const randomIndex = Math.floor(Math.random() * words.length);
