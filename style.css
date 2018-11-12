@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+}
+
+.banner {
+    margin-top: 5vh;
+    margin-left: 10vw;
+}
+
+.icon {
+    width: 50px;
+}
+
+h1 {
+    display: inline;
+    font-family: 'Fredericka the Great', cursive;
+    color:rgb(71, 71, 71);
+}
+
+.container {
+    margin: 50px auto;
+    width: 70vw;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    grid-template-rows: 5fr 10fr;
+    grid-template-areas: 'hangmanWord hangmanWord' 'hangman keyboard';
+}
+
+.hangman-word {
+    grid-area: hangmanWord;
+    text-align: center;
+    min-height: 60px;
+}
+
+.hangman {
+    grid-area: hangman;
+}
+
+.keyboard {
+    grid-area: keyboard;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hangman img {
+    width: 350px;
+}
