@@ -5,8 +5,9 @@
 }
 
 body{
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Archivo', sans-serif;
 }
+
 
 .banner {
     margin-top: 5vh;
@@ -37,19 +38,55 @@ h1 {
     grid-area: word;
     text-align: center;
     font-size: 48px;
-    min-height: 60px;
+    line-height: 200px;
 }
 
 .hangman {
     grid-area: hangman;
+    text-align: center;
+    margin: auto auto;
 }
 
 .keyboard {
     grid-area: keyboard;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
 }
 
 .hangman img {
     width: 350px;
+}
+
+.letter {
+    background-color: #222222;
+    color: white;
+    border: 3px solid gray;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 15px;
+    font-size: 2rem;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.active:hover {
+    background-color: #363535;
+    color: white;
+    border: 3px solid rgb(180, 180, 180);
+}
+
+.letter-false {
+    color: #C00000;
+    border: 3px solid #C00000;
+    cursor: default;
+}
+
+.letter-true {
+    color: #00C000;
+    border: 3px solid #00C000;
+    cursor: default;
 }
