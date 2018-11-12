@@ -22,6 +22,7 @@ console.log('%c hangmanWord: ', 'color: green', hangmanWord)
 console.log('%c hangmanWordLength: ', 'color: green', hangmanWord.length)
 
 let wordToGuess = "";
+let badChoice = 0
 
 for (i = 0; i < hangmanWord.length; i++) {
     if (hangmanWord.charAt(i) == " ") {
@@ -42,13 +43,62 @@ function start() {
     let render_keyboard = '';
 
     letters.map(i => {
-        let element = 'lit' + letters.indexOf(i);
+        let element = 'letter-' + letters.indexOf(i);
         render_keyboard +=
         `
-        <div class="letter active" onclick="alert(${letters.indexOf(i)})" id="${element}">${i}</div>
+        <div class="letter active" onclick="checkLetter(${letters.indexOf(i)})" id="${element}">${i}</div>
         `
     });
     keyboardPlace.innerHTML = render_keyboard;
     getWord();
 }
 
+String.prototype.revealLetter = function(position, letter) {
+    if(position > this.length - 1) {
+        return this.toString();
+    } else {
+        return this.substr(0, position) + letter + this.substr(position + 1);
+    }
+}
+
+function checkLetter(number) {
+    let goal = false;
+    let element = `letter-${number}`;
+    let createImage = document.createElement("img");
+
+
+    for (i = 0; i < hangmanWord.length; i++) {
+        if (hangmanWord.charAt(i) == letters[number]) {
+            wordToGuess = wordToGuess.revealLetter(i, letters[number]);
+            goal = true;
+        }
+    }
+
+    if(goal == true) {
+        document.getElementById(element).classList.add('letter-true');
+        document.getElementById(element).classList.remove('active');
+
+        getWord();
+    } else {
+        badChoice++;
+
+        document.getElementById(element).classList.add('letter-false');
+        document.getElementById(element).classList.remove('active');
+
+        document.getElementById(element).setAttribute("onClick", ";")
+        createImage.setAttribute("src", "img/img" + badChoice + ".png");
+
+        hangmanPlace.appendChild(createImage)
+    }
+
+    if (hangmanWord == wordToGuess) {
+        wordPlace.innerHTML = 'You win :) ' + hangmanWord;
+        keyboardPlace.innerHTML = '<button class="btn" onclick="location.reload()">Once more</button>'
+    }
+
+
+    if (badChoice >= 10) {
+        wordPlace.innerHTML = 'You lost! ' + hangmanWord;
+        keyboardPlace.innerHTML = '<button class="btn" onclick="location.reload()">Once more</button>'
+    }
+}

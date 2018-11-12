@@ -5,30 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Archivo|Fredericka+the+Great" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Ubuntu+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
     <link rel="icon" href="img/icon.png" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="style.css">
     <title>Hangman Game</title>
 </head>
 
 <body>
-    <div class="banner">
-        <img class="icon" src="img/icon.png" alt="icon">
-        <h1>Hangman Game</h1>
-    </div>
-
-    <div class="container">
-        <div id="word-place" class="word">
+    <header>
+        <div class="banner">
+            <img class="icon" src="img/icon.png" alt="icon">
+            <h1>Hangman Game</h1>
         </div>
+    </header>
 
-        <div id="hangman-place" class="hangman">
-            <img src="img/img0.png" alt="">
-        </div>
+    <main>
+        <div class="container">
+            <div id="word-place" class="word">
+            </div>
 
-        <div id="keyboard-place" class="keyboard">
-            <p>Test1</p>
+            <div id="hangman-place" class="hangman">
+                <img src="img/img0.png" alt="">
+            </div>
+
+            <div id="keyboard-place" class="keyboard">
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <p>Made with &nbsp;<i class="fa fa-heart"></i> &nbsp;by&nbsp;JustynaBed</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
